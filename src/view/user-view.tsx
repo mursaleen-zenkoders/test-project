@@ -24,20 +24,25 @@ export default function UserView() {
         website={data?.website || "Website"}
       />
 
-      <div className="inline-flex">
-        <Button
-          isDisable={userId < 2}
-          text="Prev"
-          onCLick={() => setUserId(userId - 1)}
-          className="rounded-l"
-        />
+      <div className="space-x-6 flex items-center">
+        <div className="inline-flex">
+          <Button
+            isDisable={userId < 2}
+            text="Prev"
+            onCLick={() => setUserId(userId - 1)}
+            className="rounded-l"
+          />
 
-        <Button
-          isDisable={userId > 9}
-          text="Next"
-          onCLick={() => setUserId(userId + 1)}
-          className="rounded-r"
-        />
+          <Button
+            isDisable={userId > 9}
+            text="Next"
+            onCLick={() => setUserId(userId + 1)}
+            className="rounded-r"
+          />
+        </div>
+        <p className="text-sm font-medium leading-6 text-gray-900">
+          {userId} / 10
+        </p>
       </div>
     </div>
   );
